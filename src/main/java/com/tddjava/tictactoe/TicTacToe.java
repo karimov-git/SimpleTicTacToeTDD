@@ -25,9 +25,19 @@ public class TicTacToe {
         }
     }
 
+    private char lastPlayer = 'O';
+
     public void play(int x, int y) {
         checkAxis(x);
         checkAxis(y);
         setBox(x, y);
+        lastPlayer = nextPlayer();
+    }
+
+    public char nextPlayer() {
+        if (lastPlayer == 'X') {
+            return 'O';
+        }
+        return 'X';
     }
 }
